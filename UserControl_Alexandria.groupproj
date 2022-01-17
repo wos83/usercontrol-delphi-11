@@ -1,0 +1,120 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{97D991FD-ED52-4D9E-BCF5-FB6D66607178}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Packages\Base\pckUCDataConnector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Base\pckmd5.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Base\pckAlcinoe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Base\pckUserControl_RT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Base\pckUserControl_DT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Historico\pckHistorico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Connectors\UCFireDacCon\pckFireDacConn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\Connectors\UCRestConn\pckUCRestConn.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="pckUCDataConnector">
+        <MSBuild Projects="Packages\Base\pckUCDataConnector.dproj"/>
+    </Target>
+    <Target Name="pckUCDataConnector:Clean">
+        <MSBuild Projects="Packages\Base\pckUCDataConnector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckUCDataConnector:Make">
+        <MSBuild Projects="Packages\Base\pckUCDataConnector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckmd5">
+        <MSBuild Projects="Packages\Base\pckmd5.dproj"/>
+    </Target>
+    <Target Name="pckmd5:Clean">
+        <MSBuild Projects="Packages\Base\pckmd5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckmd5:Make">
+        <MSBuild Projects="Packages\Base\pckmd5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckAlcinoe">
+        <MSBuild Projects="Packages\Base\pckAlcinoe.dproj"/>
+    </Target>
+    <Target Name="pckAlcinoe:Clean">
+        <MSBuild Projects="Packages\Base\pckAlcinoe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckAlcinoe:Make">
+        <MSBuild Projects="Packages\Base\pckAlcinoe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckUserControl_RT">
+        <MSBuild Projects="Packages\Base\pckUserControl_RT.dproj"/>
+    </Target>
+    <Target Name="pckUserControl_RT:Clean">
+        <MSBuild Projects="Packages\Base\pckUserControl_RT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckUserControl_RT:Make">
+        <MSBuild Projects="Packages\Base\pckUserControl_RT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckUserControl_DT">
+        <MSBuild Projects="Packages\Base\pckUserControl_DT.dproj"/>
+    </Target>
+    <Target Name="pckUserControl_DT:Clean">
+        <MSBuild Projects="Packages\Base\pckUserControl_DT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckUserControl_DT:Make">
+        <MSBuild Projects="Packages\Base\pckUserControl_DT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckHistorico">
+        <MSBuild Projects="Packages\Historico\pckHistorico.dproj"/>
+    </Target>
+    <Target Name="pckHistorico:Clean">
+        <MSBuild Projects="Packages\Historico\pckHistorico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckHistorico:Make">
+        <MSBuild Projects="Packages\Historico\pckHistorico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckFireDacConn">
+        <MSBuild Projects="Packages\Connectors\UCFireDacCon\pckFireDacConn.dproj"/>
+    </Target>
+    <Target Name="pckFireDacConn:Clean">
+        <MSBuild Projects="Packages\Connectors\UCFireDacCon\pckFireDacConn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckFireDacConn:Make">
+        <MSBuild Projects="Packages\Connectors\UCFireDacCon\pckFireDacConn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pckUCRestConn">
+        <MSBuild Projects="Packages\Connectors\UCRestConn\pckUCRestConn.dproj"/>
+    </Target>
+    <Target Name="pckUCRestConn:Clean">
+        <MSBuild Projects="Packages\Connectors\UCRestConn\pckUCRestConn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pckUCRestConn:Make">
+        <MSBuild Projects="Packages\Connectors\UCRestConn\pckUCRestConn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="pckUCDataConnector;pckmd5;pckAlcinoe;pckUserControl_RT;pckUserControl_DT;pckHistorico;pckFireDacConn;pckUCRestConn"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="pckUCDataConnector:Clean;pckmd5:Clean;pckAlcinoe:Clean;pckUserControl_RT:Clean;pckUserControl_DT:Clean;pckHistorico:Clean;pckFireDacConn:Clean;pckUCRestConn:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="pckUCDataConnector:Make;pckmd5:Make;pckAlcinoe:Make;pckUserControl_RT:Make;pckUserControl_DT:Make;pckHistorico:Make;pckFireDacConn:Make;pckUCRestConn:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
